@@ -1,4 +1,4 @@
-import { IoIosSearch } from "react-icons/io";
+
 import { TfiEmail } from "react-icons/tfi";
 
 export default function Offers(){
