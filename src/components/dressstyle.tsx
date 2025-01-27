@@ -21,27 +21,25 @@ import {
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-gray-400 text-[16px] font-normal">Casual</AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+            Casual wear.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
           <AccordionTrigger className="text-gray-400 text-[16px] font-normal">Formal</AccordionTrigger>
           <AccordionContent>
-            Yes. It comes with default styles that matches the other
-            components&apos; aesthetic.
+            Formal wear
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger className="text-gray-400 text-[16px] font-normal">Party</AccordionTrigger>
           <AccordionContent>
-            Yes. It's animated by default, but you can disable it if you prefer.
+            Party wear
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
           <AccordionTrigger className="text-gray-400 text-[16px] font-normal">Gym</AccordionTrigger>
           <AccordionContent>
-            Yes. It comes with default styles that matches the other
-            components&apos; aesthetic.
+            Gym Wear
           </AccordionContent>
         </AccordionItem>
       </Accordion>
