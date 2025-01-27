@@ -1,30 +1,18 @@
-// app/cart/page.tsx
 'use client';
 
 import { useCart } from '../../context/CartContext';
 import { FiShoppingCart } from 'react-icons/fi';
-
-const EmptyCartIcon = () => <FiShoppingCart />;
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity } = useCart();
 
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
- 
-    
-     
-
-   
-
-  
-  
   return (
     <div className="container mx-auto p-4 text-center">
-      
       <h1 className="text-4xl font-bold mb-10 text-center mt-8">Your Cart</h1>
       <div className='flex justify-center items-center mb-10'>
-      <FiShoppingCart className=' text-5xl font-bold' />
+        <FiShoppingCart className='text-5xl font-bold' />
       </div>
       {cart.length === 0 ? (
         <div className="text-center">
@@ -76,7 +64,6 @@ export default function CartPage() {
               <p className="text-lg font-semibold">${totalPrice.toFixed(2)}</p>
             </div>
             <button
-            
               className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Checkout
