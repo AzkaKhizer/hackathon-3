@@ -1,9 +1,9 @@
-
+import { IoIosSearch } from "react-icons/io";
 import { TfiEmail } from "react-icons/tfi";
 
 export default function Offers(){
     return(
-        <main className="w-full flex justify-center items-center mt-10 max-w-screen-2xl  mx-auto ">
+        <main className="w-full flex justify-center items-center mt-10 max-w-screen-2xl  mx-auto overflow-hidden ">
         <div className="w-[80%] bg-black text-white h-full md:h-[150px] flex flex-col md:flex-row items-center justify-evenly rounded-[20px] p-16 ">
             <h1 className="font-bold text-[32px] md:text-[40px] w-[300px] md:w-[60%] ">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h1>
             <div>
