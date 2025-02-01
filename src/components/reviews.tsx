@@ -57,7 +57,7 @@ const testimonials = [
 
 export default function CustomerTestimonials() {
   return (
-    <main className="md:mt-14 max-w-screen-2xl  mx-auto">
+    <main className="md:mt-14 max-w-screen-2xl  mx-auto overflow-x-hidden">
        <div className="flex justify-between items-center border-b-2 pb-3 p-2 md:px-10 max-w-screen-2xl  mx-auto">
         <span className="text-sm hover:font-bold cursor-pointer text-gray-400 hover:text-gray-700 hover:underline underline-offset-4">Product Details</span>
         <span className="text-sm hover:font-bold cursor-pointer text-gray-400 hover:text-gray-700 hover:underline underline-offset-4">Rating & Reviews</span>
