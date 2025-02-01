@@ -16,11 +16,11 @@ export default function Header(){
     const { cart } = useCart();
 
     return (
-        <div className=" max-w-screen-2xl  mx-auto flex justify-center items-center w-full">
+        <div className=" max-w-screen-2xl  flex justify-center items-center w-full overflow-x-hidden mx-auto">
         <header className="w-full h-[60px] flex justify-between items-center ml-4 md:mt-2 ">
             <div className="flex justify-center items-center ">
                 <SheetSide/>
-                <h1 className="font-bold text-[25px] sm:text-[32px] pl-2">SHOP.CO</h1>
+                <h1 className="font-bold text-[25px] sm:text-[32px] pl-2 pr-7">SHOP.CO</h1>
             </div>
 
             <ul className="hidden lg:block">
@@ -51,4 +51,6 @@ export default function Header(){
         </div>
     )
 }
+
+
 
