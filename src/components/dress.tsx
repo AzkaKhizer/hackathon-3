@@ -2,10 +2,10 @@ import Image from "next/image"
 
 export default function Dress(){
     return(
-        <div className="flex justify-center rounded-[40px] max-w-screen-2xl  mx-auto">
-        <div className="w-full md:w-[1239px] h-[975px] md:h-[866px] bg-[#F0F0F0] flex flex-col justify-start items-center md:mt-10 rounded-[40px]">
+        <div className="flex justify-center rounded-[40px] max-w-screen-2xl overflow-x-hidden w-full">
+        <div className="w-full md:w-[1239px]  h-[975px] md:h-[866px] bg-[#F0F0F0] flex flex-col justify-start items-center md:mt-10 rounded-[40px]">
            <div>
-             <h1 className="text-[32px] md:text-[48px] font-bold mt-10">BROWSE BY DRESS STYLE</h1>
+             <h1 className="text-[32px] md:text-[48px] font-bold mt-10 text-center">BROWSE BY DRESS STYLE</h1>
            </div>
 
            <div className="w-[90%] h-[550px] flex flex-wrap items-center justify-center mt-10 ">
