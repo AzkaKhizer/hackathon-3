@@ -2,6 +2,7 @@
 
 import { useCart } from '../../context/CartContext';
 import { FiShoppingCart } from 'react-icons/fi';
+import Image from 'next/image'; // ✅ Import Next.js Image component
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity } = useCart();
@@ -27,7 +28,15 @@ export default function CartPage() {
               <div key={item._id} className="flex flex-col sm:flex-row items-center justify-between border-b pb-4 mb-4">
                 <div className="flex flex-col sm:flex-row items-center">
                   {item.imageUrl && (
-                    <img src={item.imageUrl} alt={item.name} className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-lg" />
+                    <div className="relative w-16 h-16 sm:w-20 sm:h-20">
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.name}
+                        fill
+                        className="object-cover rounded-lg"
+                        priority // Loads important images first
+                      />
+                    </div>
                   )}
                   <div className="mt-2 sm:mt-0 sm:ml-4 text-center sm:text-left">
                     <h2 className="text-lg font-semibold">{item.name}</h2>
