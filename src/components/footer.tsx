@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import { FaTwitter } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa";
@@ -9,7 +9,8 @@ import Offers from "./offers";
 
 export default function Footer(){
     return(
-        <main className="bg-[#F0F0F0] relative p-7 md:px-12 w-full h-full max-w-screen-2xl  mx-auto  md:h-[400px] flex flex-col  justify-start items-center mt-36 md:mt-32">
+        <div className="overflow-x-hidden">
+        <main className="bg-[#F0F0F0] relative p-7 md:px-12 w-full h-full max-w-screen-2xl  mx-auto  md:h-[400px] flex flex-col  justify-start items-center mt-36 md:mt-32 ">
           
            <span className="absolute  top-[-180px]  md:top-[-120px]">
            <Offers />
@@ -89,5 +90,6 @@ export default function Footer(){
         </div>
         
         </main>
+        </div>
     )
 }
