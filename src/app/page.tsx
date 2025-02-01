@@ -12,7 +12,7 @@ import CustomerCarousel from "@/components/carousel";
 
 export default function Home() {
   return (
-    <div >
+    <div className="max-w-screen-2xl mx-auto overflow-x-hidden " >
       
       <Hero/>
       <Fonts/>
@@ -25,3 +25,4 @@ export default function Home() {
     </div>
   );
 }
+
