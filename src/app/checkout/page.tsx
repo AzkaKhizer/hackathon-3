@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import toast, { Toaster } from 'react-hot-toast';
@@ -123,10 +124,14 @@ const CheckoutForm = () => {
             <h2 className="text-xl font-semibold mb-4">Your Cart</h2>
             {cartItems.map((item) => (
               <div key={item._id} className="flex justify-between items-center border-b pb-4 mb-4">
-                <img
+                <Image
                   src={item.imageUrl}
                   alt={item.title}
-                  className="w-20 h-20 object-cover rounded-lg"
+                  width={80}
+                  height={80}
+                  className="object-cover rounded-lg"
+                  priority
+                  unoptimized
                 />
                 <div>
                   <h3 className="text-lg font-semibold">{item.title}</h3>
@@ -141,7 +146,7 @@ const CheckoutForm = () => {
           <div className="bg-white shadow-md rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">Payment Details</h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4 ">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
