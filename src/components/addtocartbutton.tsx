@@ -8,7 +8,7 @@ interface Product {
   name: string;
   price: number;
   imageUrl?: string;
-  quantity?: number; // ✅ Ensure quantity is included
+  quantity?: number; // Ensure quantity is included
 }
 
 interface AddToCartButtonProps {
@@ -19,14 +19,15 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    // Ensure imageUrl has a fallback value if undefined
-    const productWithFallbackImage = {
+    // Ensure imageUrl has a fallback value if undefined and quantity is a number
+    const productWithFallbackImageAndQuantity = {
       ...product,
       imageUrl: product.imageUrl ?? 'default-image.jpg', // Fallback to a default image if undefined
+      quantity: product.quantity ?? 1, // Ensure quantity is a number (default to 1 if undefined)
     };
 
-    // Add product with fallback image to the cart
-    addToCart(productWithFallbackImage);
+    // Add product with fallback image and quantity to the cart
+    addToCart(productWithFallbackImageAndQuantity);
     toast.success(`${product.name} added to cart!`, {
       position: "top-right",
       autoClose: 3000,
@@ -47,3 +48,4 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
     </button>
   );
 }
+
