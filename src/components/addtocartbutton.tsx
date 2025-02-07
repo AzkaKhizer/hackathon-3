@@ -8,7 +8,7 @@ interface Product {
   name: string;
   price: number;
   imageUrl?: string;
-  quantity: number; // ✅ Ensure quantity is included
+  quantity?: number; // ✅ Ensure quantity is included
 }
 
 interface AddToCartButtonProps {
