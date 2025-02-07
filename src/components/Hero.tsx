@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <div className='bg-[#F2F0F1] flex flex-col max-w-screen-2xl  mx-auto  w-full h-full md:mt-2  overflow-x-hidden '>
+    <div className='bg-[#F2F0F1] flex flex-col max-w-screen-2xl  mx-auto  w-full h-full md:mt-2   '>
       
     <div className='md:absolute flex flex-col p-4  md:pl-10 h-full justify-start pt-4 items-start w-full  md:max-w-[50%] '>
       <h1 className='text-black md:text-[64px] font-bold md:font-extrabold text-[36px]'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>

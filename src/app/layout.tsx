@@ -1,3 +1,4 @@
+// At the top of the layout.tsx file (no 'use client' directive for this part)
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -5,6 +6,8 @@ import Headertop from "@/components/header-top";
 import Header from "@/components/Header";
 import Footer from "@/components/footer";
 import { CartProvider } from "@/context/CartContext";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,7 +40,9 @@ export default function RootLayout({
         <CartProvider>     
         <Header/>
               
-        {children}</CartProvider>
+        {children}
+        <ToastContainer />
+        </CartProvider>
         <Footer/>
       </body>
     </html>

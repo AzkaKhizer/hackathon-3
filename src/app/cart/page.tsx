@@ -3,10 +3,12 @@
 import { useCart } from '../../context/CartContext';
 import { FiShoppingCart } from 'react-icons/fi';
 import Image from 'next/image'; // ✅ Import Next.js Image component
+import { useRouter } from 'next/navigation'; // Importing useRouter for navigation
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity } = useCart();
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  const router = useRouter(); // Initialize the router
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -77,11 +79,17 @@ export default function CartPage() {
               <p className="text-gray-600 text-lg">Total</p>
               <p className="text-lg md:text-xl font-semibold">${totalPrice.toFixed(2)}</p>
             </div>
+            {/* Checkout Button */}
             <button
-              className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
-            >
-              Checkout
-            </button>
+  onClick={() => {
+    localStorage.setItem("cart", JSON.stringify(cart)); // Store cart in localStorage
+    router.push("/checkout"); // Navigate to checkout
+  }}
+  className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+>
+  Checkout
+</button>
+
           </div>
         </div>
       )}
