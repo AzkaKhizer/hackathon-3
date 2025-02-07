@@ -1,23 +1,30 @@
-// components/AddToCartButton.tsx
 'use client'; // Mark this as a client component
 
 import { useCart } from '../context/CartContext';
 import { toast } from 'react-toastify';
 
+interface Product {
+  _id: string;
+  name: string;
+  price: number;
+  imageUrl: string; // Ensure imageUrl is always a string
+  quantity: number;
+}
+
 interface AddToCartButtonProps {
-  product: {
-    _id: string;
-    name: string;
-    price: number;
-    imageUrl?: string;
-  };
+  product: Omit<Product, 'quantity'>; // Exclude quantity from props
 }
 
 export default function AddToCartButton({ product }: AddToCartButtonProps) {
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    addToCart(product);
+    addToCart({
+      ...product,
+      quantity: 1,
+      imageUrl: product.imageUrl ?? "/default-image.jpg", // Provide a default image URL
+    });
+
     toast.success(`${product.name} added to cart!`, {
       position: "top-right",
       autoClose: 3000,
