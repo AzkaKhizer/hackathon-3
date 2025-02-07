@@ -19,7 +19,14 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    addToCart(product);
+    // Ensure imageUrl has a fallback value if undefined
+    const productWithFallbackImage = {
+      ...product,
+      imageUrl: product.imageUrl ?? 'default-image.jpg', // Fallback to a default image if undefined
+    };
+
+    // Add product with fallback image to the cart
+    addToCart(productWithFallbackImage);
     toast.success(`${product.name} added to cart!`, {
       position: "top-right",
       autoClose: 3000,
