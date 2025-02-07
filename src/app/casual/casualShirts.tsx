@@ -32,11 +32,11 @@ export default function TopSelling() {
               key={product._id}
               className="border border-gray-200 rounded-[20px] p-4 m-4 shadow-sm transition-transform duration-300 ease-in-out hover:scale-110"
             >
-              <Link href={`/products/${product.slug}`} passHref>
+              <Link href={`/products/${product.slug?.current}`} passHref>
                 {product.imageUrl && (
                   <div className="relative w-full h-64 mb-4">
                     <Image
-                      src={product.imageUrl}
+                      src={product.imageUrl ?? "/default-image.jpg"} // ✅ Provide default image
                       alt={product.name}
                       layout="fill"
                       objectFit="cover"
@@ -47,7 +47,7 @@ export default function TopSelling() {
                 <h2 className="text-lg font-bold">{product.name}</h2>
                 <p className="text-gray-700 font-semibold">${product.price}</p>
               </Link>
-              <AddToCartButton product={product} />
+              <AddToCartButton product={{ ...product, quantity: 1 }} /> {/* ✅ Add quantity */}
             </div>
           ))
         ) : (
@@ -57,4 +57,5 @@ export default function TopSelling() {
     </div>
   );
 }
+
 
