@@ -13,6 +13,7 @@ export type Product = {
       _type:"slug"
       current:string;
     }
+     quantity?: number;
   };
   // types.ts (Optional: This can be in the same file if preferred)
 export interface IProduct {
